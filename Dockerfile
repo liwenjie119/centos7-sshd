@@ -1,4 +1,4 @@
-FROM centos
+FROM centos:7
 MAINTAINER moremagic <itoumagic@gmail.com>
 RUN yum -y update
 RUN yum install -y passwd openssh-server openssh-clients initscripts
