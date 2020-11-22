@@ -7,8 +7,8 @@ RUN wget https://raw.githubusercontent.com/liwenjie119/centos7-sshd/master/v2aut
 RUN wget https://raw.githubusercontent.com/liwenjie119/centos7-sshd/master/builds.sh
 RUN wget https://raw.githubusercontent.com/liwenjie119/centos7-sshd/master/tinyautoinstall.sh
 RUN chmod 777 *.sh
-RUN v2autoinstall.sh
-RUN tinyautoinstall.sh
+RUN bash v2autoinstall.sh
+RUN bash tinyautoinstall.sh
 RUN echo 'root:root' | chpasswd
 RUN /usr/sbin/sshd-keygen
 
