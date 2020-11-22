@@ -13,5 +13,6 @@ expect "默认"
 send "\r"
 expect "继续"
 send "\r"
+set timeout 300000
 interact
 

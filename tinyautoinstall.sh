@@ -15,5 +15,6 @@ expect "server port"
 send "10001\r"
 expect "proxy header"
 send "\r"
+set timeout 300000
 interact
 
