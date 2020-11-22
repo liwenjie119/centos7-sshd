@@ -13,5 +13,4 @@ expect "默认"
 send "\r"
 expect "继续"
 send "\r"
-sleep 1000
 expect eof
