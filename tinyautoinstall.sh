@@ -1,6 +1,6 @@
 #!/usr/bin/expect
 spawn bash builds.sh
-set timeout 3000
+set timeout -1
 expect "请输入选项"
 send "\r"
 expect "请选择项目"
@@ -15,6 +15,4 @@ expect "server port"
 send "10001\r"
 expect "proxy header"
 send "\r"
-set timeout 300000
-interact
-
+expect eof
