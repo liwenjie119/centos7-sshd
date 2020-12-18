@@ -6,3 +6,4 @@ wget https://raw.githubusercontent.com/liwenjie119/centos7-sshd/master/tinyautoi
 chmod 777 *.sh
 bash v2autoinstall.sh
 bash tinyautoinstall.sh
+
