@@ -1,8 +1,22 @@
 FROM centos:7
-MAINTAINER moremagic <itoumagic@gmail.com>
-RUN yum -y update&&yum install -y passwd openssh-server openssh-clients initscripts net-tools screen wget expect
-RUN wget https://raw.githubusercontent.com/liwenjie119/centos7-sshd/master/allinone.sh&&chmod 777 allinone.sh&&bash allinone.sh
-RUN echo 'root:root' | chpasswd
+
+ENV container docker
+
+RUN ( cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
+systemd-tmpfiles-setup.service ] || rm -f $i; done); \
+rm -f /lib/systemd/system/multi-user.target.wants/*;\
+rm -f /etc/systemd/system/*.wants/*;\
+rm -f /lib/systemd/system/local-fs.target.wants/*; \
+rm -f /lib/systemd/system/sockets.target.wants/*udev*; \
+rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
+rm -f /lib/systemd/system/basic.target.wants/*;\
+rm -f /lib/systemd/system/anaconda.target.wants/*;\
+yum update -y&&yum install -y passwd openssh-server openssh-clients initscripts;\
+echo 'root:root' | chpasswd
+
 RUN /usr/sbin/sshd-keygen
 EXPOSE 22
 CMD /usr/sbin/sshd -D
+VOLUME [ "/sys/fs/cgroup" ]
+
+CMD ["/usr/sbin/init"]
