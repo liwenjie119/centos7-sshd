@@ -13,10 +13,8 @@ rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;\
 yum update -y&&yum install -y passwd openssh-server openssh-clients initscripts;\
 echo 'root:root' | chpasswd
-
+VOLUME [ "/sys/fs/cgroup" ]
+CMD ["/usr/sbin/init"]
 RUN /usr/sbin/sshd-keygen
 EXPOSE 22
 CMD /usr/sbin/sshd -D
-VOLUME [ "/sys/fs/cgroup" ]
-
-CMD ["/usr/sbin/init"]
