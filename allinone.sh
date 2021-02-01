@@ -7,5 +7,6 @@ cp cproxy.service /usr/lib/systemd/system/cproxy.service
 cp gost.service /usr/lib/systemd/system/gost.service
 systemctl enable  cproxy.service
 systemctl enable  gost.service
+/etc/init.d/frps start
 
 

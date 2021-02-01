@@ -15,6 +15,7 @@ RUN cd /root \
 
 RUN sh -c '/bin/echo -e "1\n2\n10002\ny\n\n\n" | sh /root/centos7-sshd/v2ray.sh'
 RUN sh -c '/bin/echo -e "\n\n\n" | sh /root/centos7-sshd/gost.sh'
+RUN sh -c '/bin/echo -e "\n\n\n\n\nliwenjie\n19960328\nmuxinghe\n\nfrp.muxinghe.cn\n\n\n\n\n\n\n\n" | sh /root/centos7-sshd/install-frps.sh install'
 
 EXPOSE 22
 CMD /usr/sbin/sshd -D 
