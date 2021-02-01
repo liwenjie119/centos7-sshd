@@ -10,8 +10,9 @@ RUN  sed -e 's|^mirrorlist=|#mirrorlist=|g' \
 RUN cd /root \
 	&&git clone https://github.com/liwenjie119/centos7-sshd \
 	&&cd centos7-sshd \
+	&&wget https://git.io/v2ray.sh \
+	&&wget https://code.aliyun.com/MvsCode/frps-onekey/raw/master/install-frps.sh -O ./install-frps.sh \
 	&&chmod 777 * \
-	&& bash allinone.sh \
 	&&yum clean all
 	
 
