@@ -1,6 +1,10 @@
 FROM centos:7
 
-RUN yum update -y&&yum install -y passwd wget expect tzdata git openssh-server openssh-clients initscripts \
+RUN sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+         -e 's|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.tuna.tsinghua.edu.cn|g' \
+         -i.bak \
+         /etc/yum.repos.d/CentOS-*.repo \
+	yum update -y&&yum install -y passwd wget expect tzdata git openssh-server openssh-clients initscripts \
 	&&echo 'root:root' | chpasswd \
 	&&/usr/sbin/sshd-keygen 
 RUN cd /root \
@@ -14,3 +18,4 @@ RUN sh -c '/bin/echo -e "\n\n\n" | sh /root/centos7-sshd/gost.sh'
 
 EXPOSE 22
 CMD /usr/sbin/sshd -D 
+ENTRYPOINT /usr/sbin/init
