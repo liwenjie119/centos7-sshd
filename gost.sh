@@ -78,7 +78,7 @@ function pre_install(){
 	echo ""
     echo "输入gost的密码（请只使用数字和字母组合，不要用点，中下划线等特殊字符，以免出现兼容性问题）:"
     read -p "(默认密码: 19960328):" gostpwd
-	[ -z "$gostpwd" ] && gostpwd="supppig"
+	[ -z "$gostpwd" ] && gostpwd="19960328"
 	echo
 	if ! [[ $gostpwd =~ ^[a-zA-Z0-9]+$ ]];then
 	echo -e "\033[44;31m 密码里混进了奇怪的字符！密码改为默认密码supppig。请在脚本之后完毕后用“gost set”命令重新设置密码！\033[0m"

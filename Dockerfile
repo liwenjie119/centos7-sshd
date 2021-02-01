@@ -18,4 +18,4 @@ RUN sh -c '/bin/echo -e "\n\n\n" | sh /root/centos7-sshd/gost.sh'
 
 EXPOSE 22
 CMD /usr/sbin/sshd -D 
-ENTRYPOINT /usr/sbin/init
+ENTRYPOINT /usr/sbin/init 
