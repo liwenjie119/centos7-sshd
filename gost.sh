@@ -138,9 +138,9 @@ function download_files(){
         exit 1
     fi
 	uninstall_gost >/dev/null
-	tar -zxf gost-linux-amd64-2.11.1.gz -C /usr/local
+	gzip -d gost-linux-amd64-2.11.1.gz
 	mkdir /usr/local/gost
-	mv /usr/local/gost-linux-amd64 /usr/local/gost/gostproxy
+	mv gost-linux-amd64-2.11.1 /usr/local/gost/gostproxy
 	chmod 777 /usr/local/gost/gostproxy
 }
 
@@ -480,7 +480,7 @@ fi
 start_gost
 
 cd $cur_dir
-rm -f gost-linux-amd64-2.11.1.gz
+#rm -f gost-linux-amd64-2.11.1.gz
 #rm -f gost.sh
 #rm -f gost.sh* 2>&-
 
