@@ -13,7 +13,6 @@ User=root
 #User=nobody
 ExecStart=/usr/local/sbin/gost start
 #Restart=on-failure
-Restart=always
 
 [Install]
 WantedBy=multi-user.target

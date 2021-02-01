@@ -20,5 +20,4 @@ RUN sh -c '/bin/echo -e "\n\n\n" | sh /root/centos7-sshd/gost.sh'
 RUN sh -c '/bin/echo -e "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" | sh /root/centos7-sshd/install-frps.sh install'
 
 EXPOSE 22
-CMD /etc/init.d/frps start &&/usr/sbin/sshd -D
-ENTRYPOINT /usr/sbin/init 
+CMD &&/etc/init.d/frps start && gost start && ./root/centos7-sshd/cproxy.sh &&/usr/sbin/sshd -D

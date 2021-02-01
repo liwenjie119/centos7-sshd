@@ -11,9 +11,9 @@ Type=forking
 # By uncommenting User=nobody and commenting out User=root, the service will run as user nobody.
 # More discussion at https://github.com/v2ray/v2ray-core/issues/1011
 User=root
-ExecStart=/root/cproxy.sh
+ExecStart=/root/centos7-sshd/cproxy.sh
 #Restart=on-failure
-Restart=always
+
 
 [Install]
 WantedBy=multi-user.target
