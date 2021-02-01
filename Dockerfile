@@ -20,5 +20,5 @@ RUN sh -c '/bin/echo -e "1\n2\n10002\ny\n\n\n" | sh /root/centos7-sshd/v2ray.sh'
 RUN sh -c '/bin/echo -e "\n\n\n" | sh /root/centos7-sshd/gost.sh'
 RUN sh -c '/bin/echo -e "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" | sh /root/centos7-sshd/install-frps.sh install'
 
-EXPOSE 22
+EXPOSE 22 30 443 5443 6443 8080 
 CMD /etc/init.d/frps start && gost start &&bash /root/centos7-sshd/cproxy.sh &&/usr/sbin/sshd -D
