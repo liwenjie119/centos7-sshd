@@ -1,6 +1,6 @@
 FROM centos:7
 
-RUN yum update -y&&yum install -y passwd wget expect git openssh-server openssh-clients initscripts \
+RUN yum update -y&&yum install -y passwd wget expect tzdata git openssh-server openssh-clients initscripts \
 	&&echo 'root:root' | chpasswd \
 	&&/usr/sbin/sshd-keygen 
 RUN cd /root \
@@ -9,7 +9,7 @@ RUN cd /root \
 	&&chmod 777 * \
 	&& bash allinone.sh 
 
-RUN sh -c '/bin/echo -e "1\n2\n10002\n\n\n\n" | sh /root/centos7-sshd/v2ray.sh'
+RUN sh -c '/bin/echo -e "1\n2\n10002\ny\n\n\n" | sh /root/centos7-sshd/v2ray.sh'
 RUN sh -c '/bin/echo -e "\n\n\n" | sh /root/centos7-sshd/gost.sh'
 
 EXPOSE 22

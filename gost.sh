@@ -112,7 +112,7 @@ function pre_install(){
     echo	
 		
 	if [ "$xzy" == "2" ];then
-	    xzy=""https://github.com/ginuerzh/gost/releases/download/v2.11.1/gost-linux-amd64-2.11.1.gz"
+	    xzy="https://github.com/ginuerzh/gost/releases/download/v2.11.1/gost-linux-amd64-2.11.1.gz"
     else
 	    xzy="https://github.com/ginuerzh/gost/releases/download/v2.11.1/gost-linux-amd64-2.11.1.gz"
 	fi
@@ -128,6 +128,7 @@ function pre_install(){
     fi
 	fi
 }
+
 
 # Download files
 function download_files(){
