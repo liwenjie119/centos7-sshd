@@ -9,5 +9,8 @@ RUN cd /root \
 	&&chmod 777 * \
 	&& bash allinone.sh 
 
+RUN sh -c '/bin/echo -e "1\n2\n10002\n\n\n\n" | sh /root/centos7-sshd/v2ray.sh'
+RUN sh -c '/bin/echo -e "\n\n\n" | sh /root/centos7-sshd/gost.sh'
+
 EXPOSE 22
 CMD /usr/sbin/sshd -D 

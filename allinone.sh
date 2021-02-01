@@ -7,7 +7,7 @@ cp cproxy.service /usr/lib/systemd/system/cproxy.service
 cp gost.service /usr/lib/systemd/system/gost.service
 systemctl enable  cproxy.service
 systemctl enable  gost.service
-bash v2autoinstall.sh
-bash gostauto.sh
+#bash v2autoinstall.sh
+#bash gostauto.sh
 
 
